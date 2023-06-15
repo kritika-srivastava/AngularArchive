@@ -1,0 +1,164 @@
+{
+  "Customers": [
+    {
+      "id": 1,
+      "customerId": "APP1",
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "phone": "1234643123",
+      "password": "ram123@"
+    },
+    {
+      "customerId": "APP2",
+      "name": "lucky",
+      "email": "lucky@gmail.com",
+      "phone": "9876543102",
+      "password": "Lucky@123",
+      "id": 2
+    }
+  ],
+  "Bank": [
+    {
+      "bankName": "NatWest",
+      "name": "Shirley",
+      "email": "Shirley@gmail.com",
+      "creditCard": 111112111111,
+      "debitCard": 123465774345,
+      "balance": 12326655,
+      "phone": "1294751223",
+      "accountNo": 1211111111,
+      "ifsc": "NWBKGB2L",
+      "secretCode": "111111",
+      "customerId": "APP1",
+      "id": 1
+    },
+    {
+      "bankName": "Coutts",
+      "name": "jackson",
+      "email": "jackson@gmail.com",
+      "creditCard": 123453189123,
+      "debitCard": 12396174345,
+      "balance": 6443305,
+      "phone": "1232343123",
+      "accountNo": 7675296543,
+      "ifsc": "NWBKGB2L",
+      "secretCode": "123456",
+      "customerId": "APP2",
+      "id": 2
+    },
+    {
+      "bankName": "Coutts",
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "creditCard": 111111111112,
+      "debitCard": 111111111111,
+      "balance": 1246945,
+      "phone": "1234643123",
+      "accountNo": 8741579412,
+      "ifsc": "COUTGB22",
+      "secretCode": "123456",
+      "customerId": "APP1",
+      "id": 3
+    },
+    {
+      "bankName": "SBI",
+      "name": "animesh",
+      "email": "animesh@gmail.com",
+      "creditCard": 987667891267,
+      "debitCard": 874439774345,
+      "balance": 17641955,
+      "phone": "8763454523",
+      "accountNo": 2947860213,
+      "ifsc": "SBIN0890",
+      "secretCode": "121212",
+      "customerId": "APP1",
+      "id": 4
+    },
+    {
+      "bankName": "SBI",
+      "name": "Rachel",
+      "email": "rachel@gmail.com",
+      "creditCard": 123456789123,
+      "debitCard": 123456774345,
+      "balance": 1234500,
+      "phone": "1234643123",
+      "accountNo": 2435643213,
+      "ifsc": "NWBKGB2L890",
+      "secretCode": "121212",
+      "customerId": "APP1",
+      "id": 5
+    }
+  ],
+  "Transactions": [
+    {
+      "customerId": "APP1",
+      "fromAccountNo": "1111111111",
+      "toAccountNo": "7675296543",
+      "amount": 1200,
+      "transactionMode": "Credit Card",
+      "transactionId": 1213360,
+      "TrTimestamp": "2022-10-11",
+      "id": 1
+    },
+    {
+      "customerId": "APP1",
+      "fromAccountNo": "1211111111",
+      "toAccountNo": "7675296543",
+      "amount": 1200,
+      "transactionMode": "Credit Card",
+      "transactionId": 1992348,
+      "TrTimestamp": "2022-10-11",
+      "id": 2
+    },
+    {
+      "customerId": "APP1",
+      "fromAccountNo": "1211111111",
+      "toAccountNo": "7675296543",
+      "amount": 2000,
+      "transactionMode": "Credit Card",
+      "transactionId": 1858940,
+      "TrTimestamp": "2022-10-11",
+      "id": 3
+    },
+    {
+      "fromAccountNo": "1211111111",
+      "toAccountNo": "7675296543",
+      "amount": 2000,
+      "customerId": "APP2",
+      "transactionMode": "Credit Card",
+      "transactionId": 1858940,
+      "TrTimestamp": "2022-10-11",
+      "id": 4
+    },
+    {
+      "customerId": "APP1",
+      "fromAccountNo": "1211111111",
+      "toAccountNo": "8741579412",
+      "amount": 12345,
+      "transactionMode": "Credit Card",
+      "transactionId": 1352717,
+      "TrTimestamp": "2022-10-11",
+      "id": 5
+    },
+    {
+      "customerId": "APP1",
+      "fromAccountNo": "2947860213",
+      "toAccountNo": "7675296543",
+      "amount": 12345,
+      "transactionMode": "Credit Card",
+      "transactionId": 1726148,
+      "TrTimestamp": "2022-10-12",
+      "id": 6
+    },
+    {
+      "fromAccountNo": "2947860213",
+      "toAccountNo": "7675296543",
+      "amount": 12345,
+      "customerId": "APP2",
+      "transactionMode": "Credit Card",
+      "transactionId": 1726148,
+      "TrTimestamp": "2022-10-12",
+      "id": 7
+    }
+  ]
+}

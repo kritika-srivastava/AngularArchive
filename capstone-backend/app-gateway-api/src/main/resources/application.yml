@@ -1,0 +1,31 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: app-gateway-api
+
+#  cloud:
+#    gateway:
+#      routes:
+#      - id: customerapi
+#        uri: http://localhost:8080
+#        predicates:
+#        - Path=/api/user/**
+#      - id: bankapi
+#        uri: http://localhost:8081
+#        predicates:
+#        - Path=/api/bank/**
+#      - id: transactionapi
+#        uri: http://localhost:8082
+#        predicates:
+#        - Path=/api/transaction/**
+     
+          
+  main:
+    web-application-type: reactive
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

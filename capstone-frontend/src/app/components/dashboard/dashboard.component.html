@@ -1,0 +1,100 @@
+<!-- <p>dashboard works!</p> -->
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <app-sidebar></app-sidebar>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+                <app-header></app-header>
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-6">
+
+                            <!-- Default Card Example -->
+                            <div class="card mb-4 shadow">
+                                <div class="card-header">
+                                    Add Bank
+                                </div>
+                                <div class="card-body">
+                                    Please add your bank account here.
+
+                                    <div><button class="btn btn-success" (click)="addBank()">Click me</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+
+                            <!-- Default Card Example -->
+                            <div class="card mb-4 shadow">
+                                <div class="card-header">
+                                    View Added Banks
+                                </div>
+                                <div class="card-body">
+                                    You can find the list of all your added banks here.
+
+                                    <div> <button class="btn btn-success" (click)="viewBanks()">Click me</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-6">
+
+                            <!-- Default Card Example -->
+                            <div class="card mb-4 shadow">
+                                <div class="card-header">
+                                    Make a Transaction
+                                </div>
+                                <div class="card-body">
+                                    Proceed here to make a transaction.
+
+
+                                    <div> <button class="btn btn-success" (click)="transactions()">Click me</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+
+                            <!-- Default Card Example -->
+                            <div class="card mb-4 shadow">
+                                <div class="card-header">
+                                    View Transaction history
+                                </div>
+                                <div class="card-body">
+                                    Here is the list of transactions you have made.
+                                    <div> <button class="btn btn-success" (click)="transactionHistory()">Click me</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+
+    </div>
+</body>

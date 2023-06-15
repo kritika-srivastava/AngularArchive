@@ -1,0 +1,99 @@
+<!-- <p>dashboard works!</p> -->
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <app-sidebar></app-sidebar>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+                <app-header></app-header>
+
+                <!-- Begin Page Content -->
+
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h5 class="h3 mb-0 text-gray-800">Transfer Money</h5>
+                    </div>
+                    <div class="col-xl-30">
+
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <p *ngIf="errormsg" class="alert form-control-user alert-danger">{{errormsg}}</p>
+                                <form class="user" [formGroup]="form" (ngSubmit)="addTrans()">
+
+
+                                    <!-- <div class="form-group">
+                                        <input type="text" name="fromAccountNo" id="exampleInputPassword" class="form-control form-control-user" placeholder="Enter your Account number">
+                                        <div *ngIf="f['fromAccountNo'].touched && f['fromAccountNo'].invalid" class="alert form-control-user alert-danger">
+                                            <div *ngIf="f['fromAccountNo'].errors?.['required']">Account number cannot be empty
+                                            </div>
+                                            <div *ngIf="f['fromAccountNo'].errors?.['minlength']">Account number should be of 10 characters
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <div class="form-group">
+                                        <label for="sel2" style="padding-right:1vh;">Select Bank Account:</label>
+                                        <select formControlName="fromAccountNo">
+                                          <option *ngFor="let account of bankaccount" [ngValue]="account.accountNo">{{account.accountNo}}-{{account.bankName}}</option>
+                                      </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" name="toAccountNo" id="exampleInputPassword" class="form-control form-control-user" formControlName="toAccountNo" placeholder="Enter beneficiary Account number">
+                                        <div *ngIf="f['toAccountNo'].touched && f['toAccountNo'].invalid" class="alert form-control-user alert-danger">
+                                            <div *ngIf="f['toAccountNo'].errors?.['required']">Account number cannot be empty
+                                            </div>
+                                            <div *ngIf="f['toAccountNo'].errors?.['minlength']">Account number should be of 10 characters
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="IFSC" id="exampleInputPassword" class="form-control form-control-user" formControlName="IFSC" placeholder="Enter beneficiary IFSC code">
+                                        <div *ngIf="f['IFSC'].touched && f['IFSC'].invalid" class="alert form-control-user alert-danger">
+                                            <div *ngIf="f['IFSC'].errors?.['required']">IFSC code cannot be empty</div>
+                                            <div *ngIf="f['IFSC'].errors?.['minlength']">IFSC code should be of 8 characters
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="sel1" style="padding-right:1vh;">Transfer Mode:</label>
+                                        <select formControlName="transactionMode">
+                                            <option *ngFor="let mode of modes" [ngValue]="mode">{{mode}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="secretCode" id="exampleInputPassword" class="form-control form-control-user" formControlName="secretCode" placeholder="Enter Secret code">
+                                        <div *ngIf="f['secretCode'].touched && f['secretCode'].invalid" class="alert form-control-user alert-danger">
+                                            <div *ngIf="f['secretCode'].errors?.['required']"> Secret code cannot be empty
+                                            </div>
+                                            <div *ngIf="f['secretCode'].errors?.['minlength']"> Secret code should be of 6 characters
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" name="amount" id="exampleInputPassword" class="form-control form-control-user" formControlName="amount" placeholder="Enter Amount to be transfered">
+                                        <div *ngIf="f['amount'].touched && f['amount'].invalid" class="alert form-control-user alert-danger">
+                                            <div *ngIf="f['amount'].errors?.['min']"> Amount should be atleast 1 rupee
+                                            </div>
+                                            <div *ngIf="f['amount'].errors?.['required']"> Amount cannot be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button *ngIf="form.valid" class="btn btn-success btn-user btn-block" type="submit">Submit</button>
+                                    <button *ngIf="form.invalid" class="btn btn-success btn-user btn-block" type="submit" disabled>Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </div>
+</body>

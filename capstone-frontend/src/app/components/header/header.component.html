@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+  <!-- Topbar Navbar -->
+  <ul class="navbar-nav ml-auto">
+    <button (click)="login();ngOnInit()" *ngIf="currentloggedincustomer==null"
+      class="btn btn-success my-2 my-sm-0 btn-sm login" type="submit">Login</button>
+
+    <button (click)="SignUp();ngOnInit()" *ngIf="currentloggedincustomer==null"
+      class="btn btn-danger my-2 my-sm-0 btn-sm" type="submit">Sign Up</button>
+
+    <button *ngIf="getId()!=undefined" (click)="logout();ngOnInit()" class="btn btn-danger my-2 my-sm-0 btn-sm login"
+      type="submit">Logout</button>
+
+
+    <!-- Nav Item - User Information -->
+    <div>
+      <li class="nav-item dropdown no-arrow" *ngIf="getId()!=undefined">
+        <a class="nav-link dropdown-toggle" (click)="getUser()" id="userDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{currentloggedincustomer}}</span>
+          <img class="img-profile rounded-circle" src="https://cdn-icons-png.flaticon.com/128/4128/4128176.png">
+        </a>
+
+
+      </li>
+    </div>
+  </ul>
+
+</nav>

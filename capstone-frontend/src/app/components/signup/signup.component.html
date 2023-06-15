@@ -1,0 +1,78 @@
+<app-header></app-header>
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                        </div>
+                        <form class="user" [formGroup]="form" (ngSubmit)="addCustomer()">
+
+                            <!--Name-->
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-user" formControlName="name" name="name" id="exampleFirstName" placeholder="Name">
+                                <div *ngIf="f['name'].touched && f['name'].invalid" class="form-control form-control-user alert alert-danger">
+                                    <div *ngIf="f['name'].errors?.['required']">Customer Name cannot be empty</div>
+                                    <div *ngIf="f['name'].errors?.['minlength']">Customer Name should be of min 3 characters</div>
+                                </div>
+                            </div>
+                            <!--Email-->
+                            <div class="form-group">
+                                <input type="email" name="email" formControlName="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                                <div *ngIf="f['email'].touched && f['email'].invalid" class="form-control form-control-user alert alert-danger">
+                                    <div *ngIf="f['email'].errors?.['required']">Email cannot be empty</div>
+                                    <div *ngIf="f['email'].errors?.['email']">Email format is incorrect</div>
+                                </div>
+                            </div>
+                            <!--Phone number-->
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-user" name="phone" formControlName="phone" id="exampleInputEmail1" placeholder="Phone Number">
+                                <div *ngIf="f['phone'].touched && f['phone'].invalid" class="form-control form-control-user alert alert-danger">
+                                    <span *ngIf="f['phone'].errors?.['required']">Phone number empty</span>
+                                    <span *ngIf="f['phone'].errors?.['pattern']">Phone number not of 10 digits</span>
+                                </div>
+                            </div>
+                            <!--Password-->
+                            <div class="form-group">
+                                <input type="password" name="password" formControlName="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                <div *ngIf="f['password'].touched && f['password'].invalid" id="exampleInputPassword" class="form-control form-control-user alert alert-danger">
+                                    <span *ngIf="f['password'].errors?.['required']">Empty Password</span>
+                                    <span *ngIf="f['password'].errors?.['minlength']">Password should be atleast 7 characters</span>
+                                    <span *ngIf="f['password'].errors?.['pattern']">Password should have alteast 1 uppercase  character,
+                   1 lowercase character,1 number and 1 symbol</span>
+                                </div>
+                            </div>
+
+                            <!--Confirm Password-->
+                            <div class="form-group">
+                                <input type="password" name="confirmpassword" id="exampleInputPassword" formControlName="confirmpassword" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Confirm Password">
+                                <div *ngIf="f['confirmpassword'].touched && f['confirmpassword'].invalid" class="form-control form-control-user alert alert-danger">
+                                    <span *ngIf="f['confirmpassword'].errors?.['required']">Password cannot be empty</span>
+                                    <span *ngIf="f['confirmpassword'].errors?.['matching']">Confirm Password does not match with Password
+                  </span>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                Register Account
+              </button>
+
+
+                        </form>
+                        <br>
+
+                        <div class="text-center">
+                            <a class="small" (click)="login()">Already have an account? Login!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

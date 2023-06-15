@@ -1,0 +1,53 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" (click)="dashboard()">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fab fa-codepen"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Bank of API</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+        <a class="nav-link" (click)="addBank()">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Add Bank</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+
+    <li class="nav-item">
+        <a class="nav-link" (click)="viewBanks()">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>View Added Banks</span></a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+
+
+    <li class="nav-item">
+        <a class="nav-link" (click)="transactions()">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Make Payments</span></a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+
+
+    <li class="nav-item">
+        <a class="nav-link" (click)="transactionHistory()">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>View Payment History</span></a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+</ul>
+
+<!-- End of Sidebar -->

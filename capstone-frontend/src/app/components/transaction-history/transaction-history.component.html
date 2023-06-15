@@ -1,0 +1,67 @@
+<!-- <p>dashboard works!</p> -->
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <app-sidebar></app-sidebar>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <span>
+                <div id="content">
+                    <app-header></app-header>
+                    <br>
+                    <!-- Begin Page Content -->
+
+                    <div class="container-fluid">
+
+
+                        <div class="card shadow mb-4">
+
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Transaction History</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <!-- <input class="form-control me-2" [(ngModel)]="trxId" type="search" #search
+                    placeholder="Search transaction history" aria-label="Search"> -->
+
+                                    <table class="table table-bordered" width="100%" cellspacing="0" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                                        <thead>
+                                            <tr>
+                                                <th>Transaction ID</th>
+                                                <th>From Account</th>
+                                                <th>To Account</th>
+                                                <th>Transaction Mode</th>
+                                                <th>Amount</th>
+                                                <th>Time and Date</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr *ngFor="let trx of trxArray">
+                                                <td>{{ trx.transactionId }}</td>
+                                                <td>{{ trx.toAccountNo }}</td>
+                                                <td>{{ trx.fromAccountNo }}</td>
+                                                <td>{{ trx.transactionMode }}</td>
+                                                <td>{{ trx.amount }}</td>
+                                                <td>{{ trx.trTimestamp }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"
+                    [pageSize]="pageSize" class="d-flex justify-content-center"></ngb-pagination> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </span>
+
+        </div>
+    </div>
+    <app-footer></app-footer>
+</body>

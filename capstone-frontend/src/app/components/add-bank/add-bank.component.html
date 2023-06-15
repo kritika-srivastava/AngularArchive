@@ -1,0 +1,104 @@
+<!-- <p>dashboard works!</p> -->
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <app-sidebar></app-sidebar>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+                <app-header></app-header>
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Add Bank details</h1>
+                    </div>
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <form [formGroup]="form" (ngSubmit)="addBank()" class="user">
+
+                                <div class="form-group">
+
+                                    <input type="text" name="name" class="form-control form-control-user" id="exampleInputPassword" formControlName="name" placeholder="Enter customer name">
+                                    <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                                        <div *ngIf="f['name'].errors?.['required']">Name cannot be empty</div>
+                                        <div *ngIf="f['name'].errors?.['minlength']">Name should be of min 3 characters
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sel1" style="padding-right:1vh;">Select Bank:</label>
+                                    <select formControlName="selectedBank">
+                                        <option *ngFor="let bank of banks" [ngValue]="bank">{{bank}}</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <input type="number" name="accountNo" class="form-control form-control-user" id="exampleInputPassword" formControlName="accountNo" placeholder="Enter Account Number" minlength="10">
+                                    <div *ngIf="f['accountNo'].touched && f['accountNo'].invalid" class="alert alert-danger">
+                                        <div *ngIf="f['accountNo'].errors?.['required']">Account Number cannot be empty
+                                        </div>
+                                        <div *ngIf="f['accountNo'].errors?.['pattern']">Account Number should be of 10 characters
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sel2" style="padding-right:1vh;">Select Card:</label>
+                                    <select formControlName="cardType">
+                                        <option *ngFor="let card of cards" [ngValue]="card">{{card}}</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group ">
+                                    <div class="col-xs-3">
+
+
+                                        <input type="number" name="cardNo" class="form-control form-control-user" id="exampleInputPassword" formControlName="cardNo" placeholder="Enter Card Number" minlength="10">
+                                        <div *ngIf="f['cardNo'].touched && f['cardNo'].invalid" class="alert alert-danger">
+                                            <div *ngIf="f['cardNo'].errors?.['required']">Card Number cannot be empty
+                                            </div>
+                                            <div *ngIf="f['cardNo'].errors?.['pattern']">Card Number should be of 12 characters
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <input type="text" name="IFSC" class="form-control form-control-user" id="exampleInputPassword" formControlName="IFSC" placeholder="Enter IFSC Code">
+                                    <div *ngIf="f['IFSC'].touched && f['IFSC'].invalid" class="alert alert-danger">
+                                        <div *ngIf="f['IFSC'].errors?.['required']">IFSC cannot be empty</div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <input type="text" name="secretCode" class="form-control form-control-user" id="exampleInputPassword" formControlName="secretCode" placeholder="Enter secret Code">
+                                    <div *ngIf="f['secretCode'].touched && f['secretCode'].invalid" class="alert alert-danger">
+                                        <div *ngIf="f['secretCode'].errors?.['required']">SecretCode cannot be empty
+                                        </div>
+                                        <div *ngIf="f['secretCode'].errors?.['minLength']">secretCode pattern not matching [XXXX-number]
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button *ngIf="form.valid" class="btn btn-success btn-user btn-block" type="submit">Submit</button>
+                                <button *ngIf="form.invalid" class="btn btn-success btn-user btn-block" type="submit" disabled>Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <app-footer></app-footer>
+
+        </div>
+    </div>
+</body>

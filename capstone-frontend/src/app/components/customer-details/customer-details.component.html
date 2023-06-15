@@ -1,0 +1,41 @@
+<!-- <p>dashboard works!</p> -->
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <app-sidebar></app-sidebar>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+                <app-header></app-header>
+                <br>
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <div class="card border-left-warning shadow" style="width:50rem !important;text-align:center;">
+
+                        <div class="card-header">
+                            <h3>User Details</h3>
+                        </div>
+
+                        <blockquote class="blockquote mb-0">
+                            <div class="card-header">
+                                <h2>Customer ID: {{customer.customerId}}</h2>
+                            </div>
+                            <div class="card-body">
+                                <h4><b>Name: </b> <i>{{customer.name}}</i></h4>
+                                <h4><b>Email ID: </b> <i>{{customer.email}}</i></h4>
+                                <h4><b> Phone No:</b><i>{{customer.phone}}</i> </h4>
+                            </div>
+                            <br>
+                            <br>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </div>
